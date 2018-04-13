@@ -88,6 +88,7 @@ public class FileInfo {
             System.out.println("\tVersion:\t" + next.getVersion());
             System.out.println("\tSampling Rate:\t" + next.getSamplingRate());
             System.out.println("\tMode:\t\t" + next.getMode());
+            System.out.println("\tMode Extension:\t\t" + next.getModeExtension());
             //            System.out.println("\tVersion:\t" + next.getVersion());
             //            System.out.println("\tVersion:\t" + next.getVersion());
             //            System.out.println("\tVersion:\t" + next.getVersion());
