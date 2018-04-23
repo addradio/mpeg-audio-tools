@@ -20,9 +20,8 @@ import java.io.File;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
+import org.apache.logging.log4j.core.config.DefaultConfiguration;
 
 import net.addradio.codec.id3.model.ID3Tag;
 import net.addradio.codec.mpeg.audio.DecodingResult;
@@ -46,8 +45,8 @@ public class FileInfo {
      * @param args {@link String}{@code []}
      */
     public static void main(String[] args) {
-        BasicConfigurator.configure();
-        Logger.getRootLogger().setLevel(Level.ERROR);
+        Configurator.initialize(new DefaultConfiguration()).getRootLogger()
+                .setLevel(org.apache.logging.log4j.Level.ERROR);
 
         final File dir = new File("testfiles"); //$NON-NLS-1$
         printFileInfoForAllMPEGAudioFilesInDirectory(dir);
