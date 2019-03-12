@@ -80,7 +80,7 @@ public class FileInfo {
         System.out.println("\tAverage Bitrate:\t\t" + dr.getAverageBitRate());
         System.out.println("\tDuration:\t\t\t" + dr.getDurationMillis());
         System.out.println("- Encoding Details -");
-        final Iterator<MPEGAudioFrame> iterator = dr.getAudioFramesOnly().iterator();
+        final Iterator<MPEGAudioFrame> iterator = dr.getAudioFrames().iterator();
         if (iterator.hasNext()) {
             final MPEGAudioFrame next = iterator.next();
             System.out.println("\tLayer:\t\t" + next.getLayer());
@@ -93,7 +93,7 @@ public class FileInfo {
             //            System.out.println("\tVersion:\t" + next.getVersion());
         }
         System.out.println("- ID3 Tags -");
-        final List<ID3Tag> id3TagsOnly = dr.getId3TagsOnly();
+        final List<ID3Tag> id3TagsOnly = dr.getId3Tags();
         for (ID3Tag id3Tag : id3TagsOnly) {
             System.out.println("\t" + id3Tag);
         }
